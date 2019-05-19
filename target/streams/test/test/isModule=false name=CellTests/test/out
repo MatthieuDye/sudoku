@@ -1,0 +1,51 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mCellTests:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting cell initialization[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We create a new cell and we verify every field is ok[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The row has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The column has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The propositions list is empty[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The validation value is empty[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting cell update[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We create a new cell and we add a new proposition[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The new row has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The new column has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The new propositions list is updated[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The new validation value is empty[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting cell update[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We create a new cell and we add some propositions[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The new row has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The new column has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The new propositions list is updated[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  - The new validation value is empty[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting cell update[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We create a new cell and we add some propositions BUT[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    This time, there are too many propositions[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new row has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new column has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new propositions list is not updated[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new validation value is empty[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting propositions cell update[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We create a new cell and we add some propositions BUT[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    This time, the proposition list is full[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The two cells are the same object[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting adding a cell validation[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We create a new cell and we add a validation[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    Let's test it has correctly been implemented[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The two cells are different objects[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new row has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new column has been initialized[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new propositions list is the same[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new validation value is 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting updating a cell validation[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We replace a validation input[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    Let's test it has correctly been implemented[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new validation value is 5[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting updating a failed cell validation[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We try to add a validation input which failed[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    Let's test it has correctly been implemented[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new cell is the same as the previous one[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTesting removing a proposition[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m  We try to remove a proposition from a cell[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    Let's test it has correctly been implemented[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - The new cell has only one value[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m    - And it's 5[0m[0m

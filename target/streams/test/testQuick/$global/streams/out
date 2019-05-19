@@ -1,0 +1,8 @@
+[debug] Running TaskDef(CellTests, org.scalatest.tools.Framework$$anon$1@7bcb734f, false, [SuiteSelector])
+[info] Run completed in 217 milliseconds.
+[info] Total number of tests run: 0
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0
+[info] No tests were executed.
+[debug] Passed tests:
+[debug] 	CellTests

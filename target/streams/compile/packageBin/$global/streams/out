@@ -1,0 +1,25 @@
+[info] Packaging C:\rattrapages\sudoku\target\scala-2.12\sudoku_2.12-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	sudoku\Cell.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\Cell.class
+[debug] 	sudoku\PlaySudoku$delayedInit$body.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\PlaySudoku$delayedInit$body.class
+[debug] 	sudoku
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku
+[debug] 	sudoku\Cell$.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\Cell$.class
+[debug] 	sudoku\PlaySudoku.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\PlaySudoku.class
+[debug] 	sudoku\SudokuUtils.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\SudokuUtils.class
+[debug] 	sudoku\GameState$.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\GameState$.class
+[debug] 	sudoku\Grid.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\Grid.class
+[debug] 	sudoku\PlaySudoku$.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\PlaySudoku$.class
+[debug] 	sudoku\SudokuUtils$.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\SudokuUtils$.class
+[debug] 	sudoku\GameState.class
+[debug] 	  C:\rattrapages\sudoku\target\scala-2.12\classes\sudoku\GameState.class
+[info] Done packaging.
