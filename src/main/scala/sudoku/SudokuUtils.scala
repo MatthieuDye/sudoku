@@ -7,10 +7,6 @@ object SudokuUtils {
 
   val numberPattern = new Regex("[0-9]")
 
-  def printCell(c: Cell) : Unit = {
-    print(c)
-  }
-
   def inputAction(): Int = {
 
     // transformer en constante

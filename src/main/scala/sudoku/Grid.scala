@@ -2,6 +2,8 @@ package sudoku
 
 class Grid(values: List[Cell]) {
 
+  // Vector[Vector[Cell]]
+
   private val _cells = values
 
   def cells(): List[Cell] = _cells

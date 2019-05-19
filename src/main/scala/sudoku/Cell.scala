@@ -1,6 +1,12 @@
 package sudoku
 
-class Cell(x: Int, y: Int, default_validation: Option[Int] = None, default_propositions: Option[List[Int]] = None ) {
+trait AbstractCell
+
+case class Undetermined(values: List[Int]) extends AbstractCell
+
+case class Fixed(e : Int) extends AbstractCell
+
+case class Cell(x: Int, y: Int, default_validation: Option[Int] = None, default_propositions: Option[List[Int]] = None ) {
   private val _column = x
   private val _row = y
 

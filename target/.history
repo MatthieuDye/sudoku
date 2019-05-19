@@ -108,3 +108,5 @@ compile
 test
 run
 exit
+version
+exit
