@@ -1,8 +1,8 @@
 package sudoku
 
 class Cell(x: Int, y: Int, default_validation: Option[Int] = None, default_propositions: Option[List[Int]] = None ) {
-  private val _row = x
-  private val _column = y
+  private val _column = x
+  private val _row = y
 
   private val _validation = default_validation
   private val _propositions = default_propositions
@@ -15,13 +15,15 @@ class Cell(x: Int, y: Int, default_validation: Option[Int] = None, default_propo
 
   def addProposition(p: Int): Cell = {
     if (checkPropIsOk(p)) {
-      new Cell(this.row(), this.column(), Option(this.validation()), Option(this.propositions() :+ p))
+      println(p)
+      println(this.validation())
+      new Cell(this.column(),this.row(), Option(this.validation()), Option(this.propositions() :+ p))
     } else this
   }
 
   def addPropositions(p: List[Int]): Cell = {
     if (checkPropsAreOk(p)) {
-      new Cell(this.row(), this.column(), Option(this.validation()), Option(this.propositions() ++ p))
+      new Cell( this.column(), this.row(), Option(this.validation()), Option(this.propositions() ++ p))
     } else this
   }
 
@@ -34,25 +36,34 @@ class Cell(x: Int, y: Int, default_validation: Option[Int] = None, default_propo
   }
 
   // adding a validation input takes place of the previous one
-  def addValidation(p: Option[Int]) : Cell = {
-    if (checkValIsOk(p)) {
-      new Cell(this.row(), this.column(), p, Option(this.propositions()))
+  def addValidation(p: Int) : Cell = {
+    if (checkValIsOk(Some(p))) {
+      new Cell(this.column(),this.row(),  Some(p), Option(this.propositions()))
     } else this
   }
 
   def checkValIsOk(p: Option[Int]) : Boolean = {
-    p.isDefined
+    p.isDefined && p.get>0 && p.get<10
   }
 
   def removeProposition(p: Int) : Cell = {
     if (propositions().contains(p)) {
-      new Cell(this.row(), this.column(), Option(this.validation()), Option(propositions() diff List(p)))
+      new Cell(this.column(),this.row(),  Option(this.validation()), Option(propositions() diff List(p)))
     } else this
   }
 
+  def removeValidation() : Cell = {
+    new Cell(this.column(),this.row(),  None, Option(this.propositions()))
+  }
+
   def cleanPropositions() : Cell = {
-    new Cell(this.row(), this.column(), Option(this.validation()), None)
+    new Cell(this.column(), this.row(), Option(this.validation()), None)
   }
 
   override def toString: String = if (validation()!= 0) { validation().toString } else " "
+
+  def myProps:  String =
+    if (propositions().isEmpty) {
+    "No propositions for this cell"
+  } else propositions().toString()
 }

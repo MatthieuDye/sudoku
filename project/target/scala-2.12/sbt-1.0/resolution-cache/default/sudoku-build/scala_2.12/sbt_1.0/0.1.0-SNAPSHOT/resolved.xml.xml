@@ -4,7 +4,7 @@
 		module="sudoku-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20190510185001"
+		publication="20190519141507"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

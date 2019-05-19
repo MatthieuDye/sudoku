@@ -1,5 +1,4 @@
 package sudoku
-import sudoku.Cell
 
 class Grid(values: List[Cell]) {
 
@@ -7,7 +6,11 @@ class Grid(values: List[Cell]) {
 
   def cells(): List[Cell] = _cells
 
-  def getCell(x:Int, y: Int) : Cell = {
-    return values.apply(x+y-2)
+  def getCell(column:Int, row: Int) : Cell = {
+    cells().apply( (column-1) +(row-1)*9)
+  }
+
+  def updateGrid(newCell: Cell) : Grid = {
+    new Grid(values.updated(cells().indexOf(getCell(newCell.column(), newCell.row())), newCell))
   }
 }

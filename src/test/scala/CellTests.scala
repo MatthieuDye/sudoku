@@ -100,7 +100,7 @@ class CellTests extends FunSpec with Matchers with GivenWhenThen with BeforeAndA
     describe("We create a new cell and we add a validation") {
       describe ("Let's test it has correctly been implemented") {
         val firstCell = new Cell(1, 1)
-        val secondCell = firstCell.addValidation(Some(4))
+        val secondCell = firstCell.addValidation(4)
         it("The two cells are different objects") {
           assert(!secondCell.equals(firstCell))
         }
@@ -124,8 +124,8 @@ class CellTests extends FunSpec with Matchers with GivenWhenThen with BeforeAndA
     describe("We replace a validation input") {
       describe ("Let's test it has correctly been implemented") {
         val firstCell = new Cell(1, 1)
-        val secondCell = firstCell.addValidation(Some(4))
-        val thirdCell = secondCell.addValidation(Some(5))
+        val secondCell = firstCell.addValidation(4)
+        val thirdCell = secondCell.addValidation(5)
         it("The new validation value is 5") {
           assert(thirdCell.validation() === 5)
         }
@@ -137,7 +137,7 @@ class CellTests extends FunSpec with Matchers with GivenWhenThen with BeforeAndA
     describe("We try to add a validation input which failed") {
       describe ("Let's test it has correctly been implemented") {
         val firstCell = new Cell(1, 1)
-        val secondCell = firstCell.addValidation(None)
+        val secondCell = firstCell.addValidation(0)
         it("The new cell is the same as the previous one") {
           assert(secondCell.equals(firstCell))
         }

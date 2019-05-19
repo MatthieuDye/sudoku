@@ -2,50 +2,70 @@ package sudoku
 
 import scala.util.matching.Regex
 import scala.io.StdIn._
-import sudoku.Cell
 
 object SudokuUtils {
 
   val numberPattern = new Regex("[0-9]")
-
-  val sudoku = List(0,0,0,0,0,4,0,9,0,8,0,2,9,7,0,0,0,0,9,0,1,2,0,0,3,0,0,0,0,0,0,4,9,1,5,7,0,1,3,0,5,0,9,2,0,5,7,9,1,2,0,0,0,0,0,0,7,0,0,2,6,0,3,0,0,0,0,3,8,2,0,5,0,2,0,5,0,0,0,0,0)
-  val sudoku2 = List.fill(81)(0)
-
-  val cellTest = new Cell(1,1)
-  val cellTest2 = new Cell(1,1,Some(7),Some(List(1)))
 
   def printCell(c: Cell) : Unit = {
     print(c)
   }
 
   def inputAction(): Int = {
+
+    // transformer en constante
     println("What do you want to do ?")
     println("1. Add a proposition value")
     println("2. Remove a proposition value")
-    println("3. Add a validation value")
-    println("4. remove a validation value")
+    println("3. See my propositions for this cell")
+    println("4. Add a validation value")
+    println("5. Remove a validation value")
+    println("6. Ask for correction")
 
     val action = readLine("Choose action > ")
-    return action.toInt
+
+    numberPattern.findFirstMatchIn(action) match {
+      case Some(_) =>
+        println("Number OK")
+        action.toInt
+      case None =>
+        println("Action not in charge")
+        inputAction()
+    }
   }
 
   def executeAction( cell: Cell, action : Int) : Cell = {
     action match {
-      case 1 => {
-        val inputValue = inputValue()
-        cell.addProposition(inputValue)
-      }
-      case 2 => {
+      case 1 =>
+        println("Type a proposition value to add")
+        cell.addProposition(inputValue())
+      case 2 =>
         println("Selected cell's propositions values : "+cell.propositions())
         println("Type a value to remove")
         cell.removeProposition(inputValue())
-      }
+      case 4 =>
+        println("Type a validation value to add")
+        cell.addValidation(inputValue())
+      case 5 =>
+        println("Selected cell's validation value : "+cell.validation())
+        println("Do you really want to remove it ? (y/n) > ")
+        if (readChar().equals('y')) {
+          println("Cell is removed.")
+          cell.removeValidation()
+        } else cell
+      case 3 =>
+        println("Propositions for this cell : ")
+        println(cell.myProps)
+        cell
+      case _ =>
+        println("Action not in charge. Nothing happened")
+        cell
     }
   }
 
-  def inputValue() : List[Int] = {
+  def inputValue() : Int = {
     print("Type a value > ")
-    return readInt() :: Nil
+    readInt()
   }
 
   def inputRow(): Int = {
@@ -58,43 +78,47 @@ object SudokuUtils {
 
   def inputIndice(typeInput : String) : Int = {
 
-    val indice = readLine("Give a %s (1 to 9)> ".format(typeInput))
+    val indice = readLine("Give a %s (1 to 9) > ".format(typeInput))
 
     println("Selected number is %s".format(indice))
 
     numberPattern.findFirstMatchIn(indice) match {
-      case Some(_) => {
+      case Some(_) =>
         println("Number OK")
         indice.toInt
-      }
-      case None => {
-        println("Should be a number between 1 and 9")
+      case None =>
+        println("Should be a number between 1 and 9.")
         inputColumn()
-      }
     }
   }
 
   def createCellList(figures : List[Int]) : List[Cell] = {
-    val sudokuList = List.tabulate(81)( i => new Cell((i%10)+(i/10),(i/10),Some(figures.apply(i))))
+    val figuresWithIndexes = figures.zipWithIndex
 
-    return sudokuList
+    val sudokuList: List[Cell] = figuresWithIndexes.map( tuple => new Cell( (tuple._2%9)+1, (tuple._2/9)+1, Some(tuple._1) ))
+
+    sudokuList
   }
 
+  def newCell(i: Int ) = new Cell(((i-1)%10)+1,((i-1)/9)+1,Some(i))
+
   def createGridFromCellList(cells : List[Cell]) : Grid = {
-    return new Grid(cells)
+    new Grid(cells)
   }
 
   def printGrid(grid: Grid) : Unit = {
-    println("-------------")
-    for (i<- 1 to 9) {
-      for (j<- 1 to 9) {
-        if (j%3==1) print("|")
-        print(grid.cells().apply(i+j-2).toString)
-        if (j==9) print("|")
+    println("\n  123 456 789")
+    println(" -------------")
+    for (y<- 1 to 9) {
+      print(y)
+      for (x<- 1 to 9) {
+        if (x%3==1) print("|")
+        print(grid.getCell(x,y))
+        if (x==9) print("|")
       }
       println()
-      if (i%3==0) {
-        println("-------------")
+      if (y%3==0) {
+        println(" -------------")
       }
 
     }

@@ -1,6 +1,6 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(GridTests, org.scalatest.tools.Framework$$anon$1@5435ba51, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CellTests, org.scalatest.tools.Framework$$anon$1@5435ba51, false, [SuiteSelector])[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 460 milliseconds.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CellTests, org.scalatest.tools.Framework$$anon$1@1e9c98ed, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(GridTests, org.scalatest.tools.Framework$$anon$1@1e9c98ed, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 408 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 26[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 2, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 26, failed 0, canceled 0, ignored 0, pending 0[0m[0m
